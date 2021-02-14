@@ -1,8 +1,12 @@
-Cheat.PrintColor([242, 252, 5, 255], "\n=========================================================\n")
-Cheat.PrintColor([2, 252, 17, 255], "                       OsirisChams.js                    \n");
-Cheat.PrintColor([2, 252, 17, 255], "               Created by: invalidcode#1337              \n");
-Cheat.PrintColor([2, 252, 17, 255], "                 Credits: danielkrupinski                \n");
-Cheat.PrintColor([242, 252, 5, 255], "=========================================================\n\n");
+/**
+ * 
+ * OsirisChams
+ * Author: invalidcode#7427
+ * 
+ * Credits: danielkrupinski for the chams' key values
+ * Chams.cpp: https://github.com/danielkrupinski/Osiris/blob/master/Osiris/Hacks/Chams.cpp
+ * 
+ */
 
 Material.Create("Glass");
 Material.Create("Metallic");

@@ -1,3 +1,10 @@
+/**
+ * 
+ * Force Conditions
+ * Author: invalidcode#7427
+ * 
+ */
+
 //#region Menu
 UI.AddSubTab(["Config", "SUBTAB_MGR"], "Force conditions");
 

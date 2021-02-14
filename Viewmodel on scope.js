@@ -1,3 +1,10 @@
+/**
+ * 
+ * Viewmodel on scope
+ * Author: invalidcode#7427
+ * 
+ */
+
 //#region Menu
 UI.AddSubTab(["Config", "SUBTAB_MGR"], "Custom scope");
 UI.AddCheckbox(["Config", "Custom scope", "Custom scope"], "Custom scope lines");
