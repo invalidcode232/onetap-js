@@ -8,7 +8,8 @@
 //#region Menu
 UI.AddSubTab(["Config", "SUBTAB_MGR"], "Custom scope");
 UI.AddCheckbox(["Config", "Custom scope", "Custom scope"], "Custom scope lines");
-UI.AddColorPicker(["Config", "Custom scope", "Custom scope"], "Scope lines color");
+UI.AddColorPicker(["Config", "Custom scope", "Custom scope"], "Scope color gradient 1");
+UI.AddColorPicker(["Config", "Custom scope", "Custom scope"], "Scope color gradient 2");
 UI.AddCheckbox(["Config", "Custom scope", "Custom scope"], "Override FOV while scoped");
 UI.AddSliderInt(["Config", "Custom scope", "Custom scope"], "Scope lines width", 0, 500);
 UI.AddSliderInt(["Config", "Custom scope", "Custom scope"], "Scope lines offset", 0, 500);
@@ -31,7 +32,8 @@ function draw()
     const thirdperson = UI.GetValue(["Misc.", "Keys", "General", "Thirdperson"]);
     const offset = UI.GetValue(["Config", "Custom scope", "Custom scope", "Scope lines offset"]);
     const leng = UI.GetValue(["Config", "Custom scope", "Custom scope", "Scope lines width"]);
-    const accent = UI.GetColor(["Config", "Custom scope", "Custom scope", "Scope lines color"]);
+    const accent1 = UI.GetColor(["Config", "Custom scope", "Custom scope", "Scope color gradient 1"]);
+    const accent2 = UI.GetColor(["Config", "Custom scope", "Custom scope", "Scope color gradient 2"]);
     const scoped = Entity.GetProp(local, "CCSPlayer", "m_bIsScoped");
     const screen_size = Render.GetScreenSize();
 
@@ -50,8 +52,8 @@ function draw()
             Convar.SetInt("fov_cs_debug", 0);
         }
         UI.SetValue(["Visuals", "Extra", "Removals", "Removals"], 59);
-        Render.GradientRect(screen_size[0] / 2 + offset, screen_size[1] / 2, leng, 1, 1, [accent[0], accent[1], accent[2], accent[3]], [accent[0], accent[1], accent[2], 0]);
-        Render.GradientRect(screen_size[0] / 2 - leng - offset, screen_size[1] / 2, leng, 1, 1, [accent[0], accent[1], accent[2], 0], [accent[0], accent[1], accent[2], accent[3]]);
+        Render.GradientRect(screen_size[0] / 2 + offset, screen_size[1] / 2, leng, 1, 1, [accent1[0], accent1[1], accent1[2], accent1[3]], [accent2[0], accent2[1], accent2[2], accent2[3]]);
+        Render.GradientRect(screen_size[0] / 2 - leng - offset, screen_size[1] / 2, leng, 1, 1, [accent2[0], accent2[1], accent2[2], accent2[2]], [accent1[0], accent1[1], accent1[2], accent1[3]]);
         Render.GradientRect(screen_size[0] / 2, screen_size[1] / 2 + offset, 1, leng, 0, [accent[0], accent[1], accent[2], accent[3]], [accent[0], accent[1], accent[2], 0]);
         Render.GradientRect(screen_size[0] / 2, screen_size[1] / 2 - leng - offset, 1, leng, 0, [accent[0], accent[1], accent[2], 0], [accent[0], accent[1], accent[2], accent[3]]);
     } else {
