@@ -53,9 +53,9 @@ function draw()
         }
         UI.SetValue(["Visuals", "Extra", "Removals", "Removals"], 59);
         Render.GradientRect(screen_size[0] / 2 + offset, screen_size[1] / 2, leng, 1, 1, [accent1[0], accent1[1], accent1[2], accent1[3]], [accent2[0], accent2[1], accent2[2], accent2[3]]);
-        Render.GradientRect(screen_size[0] / 2 - leng - offset, screen_size[1] / 2, leng, 1, 1, [accent2[0], accent2[1], accent2[2], accent2[2]], [accent1[0], accent1[1], accent1[2], accent1[3]]);
-        Render.GradientRect(screen_size[0] / 2, screen_size[1] / 2 + offset, 1, leng, 0, [accent[0], accent[1], accent[2], accent[3]], [accent[0], accent[1], accent[2], 0]);
-        Render.GradientRect(screen_size[0] / 2, screen_size[1] / 2 - leng - offset, 1, leng, 0, [accent[0], accent[1], accent[2], 0], [accent[0], accent[1], accent[2], accent[3]]);
+        Render.GradientRect(screen_size[0] / 2 - leng - offset, screen_size[1] / 2, leng, 1, 1, [accent2[0], accent2[1], accent2[2], accent2[3]], [accent1[0], accent1[1], accent1[2], accent1[3]]);
+        Render.GradientRect(screen_size[0] / 2, screen_size[1] / 2 + offset, 1, leng, 0, [accent1[0], accent1[1], accent1[2], accent1[3]], [accent2[0], accent2[1], accent2[2], accent2[3]]);
+        Render.GradientRect(screen_size[0] / 2, screen_size[1] / 2 - leng - offset, 1, leng, 0, [accent2[0], accent2[1], accent2[2], accent2[3]], [accent1[0], accent1[1], accent1[2], accent1[3]]);
     } else {
         Convar.SetFloat("r_drawvgui", 1);
         Convar.SetInt("fov_cs_debug", 0);
